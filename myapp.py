@@ -11,17 +11,19 @@ import os
 app = Flask(__name__)
 
 db = SQLAlchemy()
-DB_INFO = {
-    'user': 'postgres',
-    'password': '',
-    'host': 'localhost',
-    'name': 'postgres'
-}
 
-SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg://{user}:{password}@{host}/{name}'.format(**DB_INFO)
-app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
-
-app.config["SECRET_KEY"] = os.urandom(24)
+if app.debug:
+    app.config["SECRET_KEY"] = os.urandom(24)
+    DB_INFO = {
+        'user': 'postgres',
+        'password': '',
+        'host': 'localhost',
+        'name': 'postgres'
+    }
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg://{user}:{password}@{host}/{name}'.format(**DB_INFO)
+else:
+    app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql+psycopg://")
 
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 
