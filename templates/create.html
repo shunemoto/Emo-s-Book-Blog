@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}新規登録{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8  mx-auto">
+            <h2 class="mb-4">ブログ記事の作成</h2>
+            <form method="POST" enctype="multipart/form-data" class="form-group">
+                <div class="mb-3">
+                    <label for="title" class="form-label">タイトル</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="タイトルを入力">
+                </div>
+                <div class="mb-3">
+                    <label for="body" class="form-label">記事</label>
+                    <textarea class="form-control" id="body" rows="8" name="body" placeholder="記事を入力"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="fileUpload" class="form-label">ファイルを選択</label>
+                    <input class="form-control" type="file" name="img" id="fileUpload">
+                </div>
+                <button type="submit" class="btn btn-primary">作成</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,186 @@
+/*
+GENERAL STYLING
+================================================ */
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper{
+    flex: 1;
+}
+
+article .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+section {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/*
+COMMON
+================================================ */
+a:hover {
+    color: #0bd;
+}
+
+.collapse {
+    color: #333;
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.btn {
+    text-align: right;
+    margin-bottom: 0;
+}
+.btn a {
+    color: #fff;
+    padding: 10px 20px;
+    background: #eda1a1;
+    box-shadow: 0 0 0 5px #eda1a1;
+    border: 2px dashed #e38787;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn a:hover {
+    color: #fff;
+    background: #e38787;
+    box-shadow: 0 0 0 5px #e38787;
+    border: 2px dashed #eda1a1;
+}
+
+/*
+HERO
+================================================ */
+.hero {
+    background-image: url('../img/emoblog_title.jpg');
+    align-items: center;
+    display: flex;
+    padding-left: 8rem;
+    color: white;
+}
+
+.text-center h2{
+    font-size: 4rem;
+    font-family: "Caveat", cursive;
+}
+
+/*
+card
+================================================ */
+.col {
+    padding-top: 1rem;
+}
+
+.card-body p {
+    margin-top: 0;
+}
+
+.card-img-top {
+    height: 40vh;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    position: relative;
+}
+
+/*
+FOOTER
+================================================ */
+footer {
+    text-align: center;
+    padding-bottom: 1rem;
+    color: #333;
+    font-family: 'Bree Serif', sans-serif;
+}
+.footer-link {
+    margin-bottom: .1rem;
+    margin-top: 3rem;
+}
+
+.footer-link a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-link a:hover {
+    color: #0bd;
+}
+
+/*
+layout
+================================================ */
+@media (min-width: 700px) {
+    .layout {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 2.5rem 1rem;
+    }
+    
+    .layout img {
+        max-height: 750px;
+        width: auto;
+        object-position: center;
+        padding-left: 2rem;
+    }
+    
+    .layout p{
+        font-size: 1.25rem;
+        font-family: sans-serif;
+    }
+    
+    /* Main */
+    main {
+        width: 60%;
+        margin-bottom: 0;
+    }
+    
+    /* Aside */
+    aside {
+        width: 40%;
+        padding-top: 5rem;
+        padding-right: 6rem;
+    }
+}
+
+/*
+backgound
+================================================ */
+#backgound {
+    background-image: linear-gradient(90deg, #ffe5ae, #ffffff);
+    padding: 7rem 0;
+}
+
+/*
+MOBILE SIZE 
+================================================ */
+@media (max-width: 700px) {
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+    }
+}

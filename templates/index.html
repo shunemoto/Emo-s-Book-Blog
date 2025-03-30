@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}えもの読書ブログ{% endblock %}
+{% block content %}
+<section class="hero" id="Home">
+    <div class="text-center mb-4">
+        <h2>Emo's Book Blog</h2>
+    </div>
+</section>
+
+<div class="container text-center" id="About">
+    <div class="row row-cols-3 row-cols-md-4">
+        {% for post in posts %}  
+        <div class="col">
+            <div class="card" data-aos="fade-up">
+                <img src="{{ url_for('static', filename='img/' + post.img_name) }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.body[:17] }}</p>
+                    <p>投稿日:{{ post.created_at }}</p>
+                    <p class="btn"><a href="/{{ post.id }}/readmore">続きを読む</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
